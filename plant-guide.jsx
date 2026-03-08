@@ -19,18 +19,18 @@ const PLANTS = [
   },
   {
     id: 2, qty: 5,
-    lt: "Uolinis kadagys 'Blue Arrow'",
-    latin: "Juniperus scopulorum 'Blue Arrow'",
-    wiki: "Juniperus_scopulorum",
-    tagline: "Narrow blue columns — the toughest coastal performer. Excellent salt & wind tolerance.",
-    color: "#3a5f7a",
+    lt: "Vakarinė tuja 'Smaragd'",
+    latin: "Thuja occidentalis 'Smaragd'",
+    wiki: "Thuja_occidentalis",
+    tagline: "Classic emerald-green columnar evergreen. Low-maintenance, dense foliage, good wind tolerance.",
+    color: "#2e6b3e",
     care: {
-      sun: { icon: "☀️", title: "Sun & Soil", text: "Full sun 8+ hrs — non-negotiable for dense blue foliage. Any pH. Critical: excellent drainage — root rot is fatal." },
-      water: { icon: "💧", title: "Watering", text: "Year 1: 10–15 L 1–2×/week. Established: almost never. Overwatering is far worse than drought. Deep soak late October." },
-      feed: { icon: "🧪", title: "Fertilizing", text: "Conifer fertilizer (10-10-10) once in spring: 50–100 g per metre of height. Or thin compost." },
-      prune: { icon: "✂️", title: "Pruning", text: "Rarely needed — tight columnar form. Light trim stray branches May–Jun. NEVER cut into old brown wood — won't regrow." },
-      winter: { icon: "❄️", title: "Winter", text: "Hardy to −30°C. Tie branches inward with soft twine in November to prevent wet snow from splaying form." },
-      watch: { icon: "⚠️", title: "Watch For", text: "Phomopsis twig blight (brown tips) in humid springs — prune + copper fungicide. Don't plant near apple trees." }
+      sun: { icon: "☀️", title: "Sun & Soil", text: "Full sun to partial shade (4+ hrs). Any well-drained soil, pH 6.0–8.0. Tolerates clay better than most conifers." },
+      water: { icon: "💧", title: "Watering", text: "Year 1: 10–15 L 2×/week. Established: supplement in dry spells. Deep soak late October before freeze." },
+      feed: { icon: "🧪", title: "Fertilizing", text: "Conifer fertilizer (10-10-10) once in spring: 50–100 g per metre of height. Or thin compost layer." },
+      prune: { icon: "✂️", title: "Pruning", text: "Light trim Jun–Jul to maintain shape. NEVER cut into old brown wood — won't regrow. Naturally keeps tight columnar form." },
+      winter: { icon: "❄️", title: "Winter", text: "Hardy to −35°C. Tie branches with soft twine in November to prevent wet snow from splaying. Avoid road salt spray." },
+      watch: { icon: "⚠️", title: "Watch For", text: "Leaf miners (brown tips in spring). Spider mites in hot dry spells. Browning from winter desiccation — water well in autumn." }
     }
   },
   {
@@ -174,7 +174,7 @@ const CALENDAR = [
     may: "", jun: { action: "✂️ Prune after bloom", when: "Once petals drop (late May–Jun)" },
     jul: { action: "⚠️ Watch fireblight", when: "After humid/warm spells" },
     aug: "", sep: "", oct: { action: "🛡️ Mulch root zone", when: "Mid-Oct, before first frost" }, nov: "" },
-  { plant: "Juniperus ×5",
+  { plant: "Thuja ×5",
     feb: "", mar: { action: "🧪 Spring feed", when: "Early Mar, when snow melts" },
     apr: "", may: { action: "✂️ Light trim", when: "Mid–late May, new growth visible" },
     jun: "", jul: "", aug: "", sep: "",
