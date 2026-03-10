@@ -237,6 +237,34 @@ const CALENDAR = [
     nov: { action: "⚠️ Crown not in slush", when: "During freeze/thaw cycles — check crowns stay dry" } },
 ];
 
+const MONTHLY_SUPPLIES = {
+  feb: [],
+  mar: [
+    { icon: "🧪", name: "Universal granular fertilizer (NPK 10-10-10 or similar)", purpose: "Amelanchier, Thuja, Pinus mugo, Salvia spring feed", amount: "~1\u20131.5 kg total" },
+    { icon: "ite", name: "Garden lime (dolomitiniai miltai)", purpose: "Sesleria pH correction, Sedum & Salvia", amount: "2\u20133 kg bag" },
+    { icon: "\uD83E\uDEB5", name: "Compost or garden soil", purpose: "Calamagrostis mulch + Echinacea top-dress", amount: "2\u20133 bags (50 L)" },
+  ],
+  apr: [
+    { icon: "🧪", name: "Universal granular fertilizer", purpose: "Hydrangea post-prune feed", amount: "50\u201370 g/m\u00B2" },
+  ],
+  may: [
+    { icon: "\uD83E\uDEB5", name: "Compost or universal fertilizer", purpose: "Miscanthus light feed", amount: "2 cm layer or \u00BC cup each" },
+  ],
+  jun: [
+    { icon: "🧪", name: "Universal granular fertilizer", purpose: "Hydrangea bloom boost (extra handful)", amount: "Per label rate" },
+  ],
+  jul: [],
+  aug: [],
+  sep: [],
+  oct: [
+    { icon: "\uD83D\uDEE1\uFE0F", name: "Bark mulch (pu\u0161\u0173 \u017Eiev\u0117)", purpose: "Amelanchier, Hydrangea, Sesleria, Salvia root zone", amount: "5\u201310 cm layer, ~4\u20135 bags (50 L)" },
+  ],
+  nov: [
+    { icon: "\uD83E\uDDF5", name: "Soft twine / rope", purpose: "Thuja branch tying vs wet snow", amount: "~15\u201320 m" },
+    { icon: "\uD83D\uDEE1\uFE0F", name: "Bark mulch", purpose: "Miscanthus, Echinacea winter insulation", amount: "5\u20138 cm layer, ~2\u20133 bags" },
+  ],
+};
+
 const MONTHS = ["feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov"];
 const MONTH_LABELS = ["Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov"];
 
@@ -440,6 +468,34 @@ export default function PlantGuide() {
                     </div>
                   </div>
                 ))}
+              </div>
+            );
+          })()}
+
+          {/* Supplies Needed */}
+          {(() => {
+            const supplies = MONTHLY_SUPPLIES[selectedMonth] || [];
+            if (supplies.length === 0) return null;
+            return (
+              <div style={{ marginTop: "1.2rem" }}>
+                <h3 style={{ fontFamily: "'Georgia', serif", fontSize: "1.1rem", color: "#8b6914", marginBottom: "0.5rem" }}>
+                  🛒 Supplies Needed
+                </h3>
+                <div style={{ display: "grid", gap: "0.4rem" }}>
+                  {supplies.map((s, i) => (
+                    <div key={i} style={{
+                      background: "#fffde7", borderRadius: 8, padding: "0.7rem 1rem",
+                      border: "1px solid #f0e6b8", display: "flex", alignItems: "center", gap: 12
+                    }}>
+                      <div style={{ fontSize: "1.3rem", minWidth: 28, textAlign: "center" }}>{s.icon}</div>
+                      <div style={{ flex: 1 }}>
+                        <div style={{ fontWeight: 700, fontSize: "0.88rem", color: "#5a4a00" }}>{s.name}</div>
+                        <div style={{ fontSize: "0.78rem", color: "#888" }}>{s.purpose}</div>
+                      </div>
+                      <div style={{ fontSize: "0.78rem", color: "#8b6914", fontWeight: 600, textAlign: "right", whiteSpace: "nowrap" }}>{s.amount}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
             );
           })()}
